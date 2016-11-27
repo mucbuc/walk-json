@@ -6,7 +6,7 @@ const test = require( 'tape' )
   , Expector = require( 'expector' ).SeqExpector
   , walk = require( './../walk-json' );
 
-test.only( 'basic', t => {
+test( 'basic', t => {
 
   const e = new Expector( t )
     , obj = { a: { b: { c: 'inside' }, c: 'outside' } };
