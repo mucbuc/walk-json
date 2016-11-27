@@ -25,14 +25,12 @@ test( 'basic', t => {
   });
 }); 
 
-test( '2 arrays', t => {
+test( 'array', t => {
 
   const e = new Expector( t )
-    , obj = { a: 1, b: 2 };
+    , obj = { a: [1] };
 
-  e
-  .expect( 1, 'a' )
-  .expect( 2, 'b' ); 
+  e.expect( [1], 'a' ); 
 
   walk( obj, (prop, path) => {
     e.emit( prop, path ); 

@@ -17,7 +17,6 @@ function walk( obj, cb, join, root ) {
 
   return new Promise( (resolve, reject) => {
     traverse( obj, (prop, next) => {
-      
       const keys = Object.keys( prop )
         , key = keys[0]
         , sub = prop[key]
@@ -25,7 +24,9 @@ function walk( obj, cb, join, root ) {
 
       cb( sub, path );
 
-      if (typeof sub === 'object') {
+      if (    typeof sub === 'object'
+          &&  !Array.isArray(sub)) 
+      {
         walk( sub, cb, join, path )
         .then( next );  
       }
