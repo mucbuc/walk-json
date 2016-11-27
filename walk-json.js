@@ -67,7 +67,7 @@ else {
     fs.readFile( program.args[0], (err, data) => { 
       if (err) throw err; 
       walk( JSON.parse(data.toString()), ( prop, path ) => {
-        console.log( '*', prop, path ); 
+        console.log( prop, path ); 
       }, join );
     });
   }
