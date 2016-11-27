@@ -1,6 +1,6 @@
 # walk-json
 
-recursivly walk json properties
+recursively walk json properties
 
 ###example
 ```    
