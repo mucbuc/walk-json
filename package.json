@@ -1,7 +1,7 @@
 {
   "name": "walk-json",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "recursively walk json properties",
   "main": "walk-json.js",
   "scripts": {
     "test": "tape test/test.js"
@@ -15,5 +15,6 @@
   "devDependencies": {
   	"tape": "*",
   	"expector" : "*"
-  }
+  },
+  "keywords": [ "json", "walk", "properties" ]
 }

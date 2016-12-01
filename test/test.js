@@ -17,8 +17,9 @@ test( 'basic', t => {
   .expect( 'inside', 'abc' )
   .expect( 'outside', 'ac' );
 
-  walk( obj, (prop, path) => {
+  walk( obj, (prop, path, next) => {
     e.emit( prop, path ); 
+    next();
   })
   .then( () => {
     e.check();
@@ -32,8 +33,9 @@ test( 'array', t => {
 
   e.expect( [1], 'a' ); 
 
-  walk( obj, (prop, path) => {
+  walk( obj, (prop, path, next) => {
     e.emit( prop, path ); 
+    next();
   })
   .then( () => {
     e.check();
