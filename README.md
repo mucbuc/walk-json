@@ -4,8 +4,9 @@ recursivly walk json properties
 
 ###example
 ```    
-walk( { a: { b: { c: 'inside' }, c: 'outside' } }, (prop, path) => {
+walk( { a: { b: { c: 'inside' }, c: 'outside' } }, (prop, path, next) => {
 	console.log( prop, path ); 
+	next();
 })
 .then( () => {
 	console.log( 'done' ); 

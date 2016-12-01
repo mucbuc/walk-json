@@ -22,17 +22,17 @@ function walk( obj, cb, join, root ) {
         , sub = prop[key]
         , path = join( root, key );
 
-      cb( sub, path );
-
-      if (    typeof sub === 'object'
-          &&  !Array.isArray(sub)) 
-      {
-        walk( sub, cb, join, path )
-        .then( next );  
-      }
-      else {
-        next(); 
-      }
+      cb( sub, path, () => {
+        if (    typeof sub === 'object'
+            &&  !Array.isArray(sub)) 
+        {
+          walk( sub, cb, join, path )
+          .then( next );  
+        }
+        else {
+          next(); 
+        }
+      });
     })
     .then( resolve )
     .catch( reject ); 
@@ -66,8 +66,9 @@ else {
     
     fs.readFile( program.args[0], (err, data) => { 
       if (err) throw err; 
-      walk( JSON.parse(data.toString()), ( prop, path ) => {
-        console.log( prop, path ); 
+      walk( JSON.parse(data.toString()), ( prop, path, next ) => {
+        console.log( prop, path );
+        next();
       }, join );
     });
   }
