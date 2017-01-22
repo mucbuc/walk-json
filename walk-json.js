@@ -32,7 +32,8 @@ function walk( obj, cb, join, root ) {
         else {
           next(); 
         }
-      });
+      }, 
+      next );
     })
     .then( resolve )
     .catch( reject ); 

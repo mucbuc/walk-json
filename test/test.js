@@ -42,3 +42,19 @@ test( 'array', t => {
   });
 
 });
+
+test( 'skip', t => {
+  const e = new Expector( t )
+    , obj = { a: 1, b: { c: 2 } };
+
+  e.expect( 'a', 1 )
+   .expect( 'b', { c: 2 } );
+
+  walk( obj, (prop, path, next, skip) => {
+    e.emit( path, prop ); 
+    (path == 'b' ? skip : next)();
+  })
+  .then( () => {
+    e.check();
+  });
+});
