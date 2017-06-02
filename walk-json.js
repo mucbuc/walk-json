@@ -2,7 +2,7 @@
 
 'use strict'; 
 
-const walk = require( './sdk' )
+const walk = require( './index' )
   , program = require( 'commander' ); 
 
 program.version( '0.0.0' )
