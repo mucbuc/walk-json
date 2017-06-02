@@ -1,6 +1,6 @@
 {
   "name": "walk-json",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "recursively walk json properties",
   "main": "index.js",
   "bin": "./walk-json.js",
