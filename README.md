@@ -2,8 +2,8 @@
 
 recursively walk json properties
 
-###examples  
-####1   
+### examples  
+#### 1   
 ```    
 walk( { a: { b: { c: 'inside' }, c: 'outside' } }, (prop, path, next) => {
 	console.log( prop, path ); 
@@ -22,7 +22,7 @@ outside ac
 done
 ```
 
-####2  
+#### 2  
 ```  
 walk( { a: 1, b: { c: 2 } }, (prop, path, next, skip) => {
     console.log( path, prop ); 
