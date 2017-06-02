@@ -4,7 +4,7 @@
 
 const test = require( 'tape' )
   , Expector = require( 'expector' ).SeqExpector
-  , walk = require( './../walk-json' );
+  , walk = require( './../index' );
 
 test( 'basic', t => {
 

@@ -3,6 +3,7 @@
 'use strict'; 
 
 const walk = require( './index' )
+  , fs = require( 'fs' )
   , program = require( 'commander' ); 
 
 program.version( '0.0.0' )
